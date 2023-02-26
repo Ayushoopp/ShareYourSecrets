@@ -10,7 +10,7 @@ const encrypt = require("mongoose-encryption");
 app.set("view engine", 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
-mongoose.connect("mongodb://localhost:27017/usersDB", { useNewUrlParser: true});
+mongoose.connect(proces.env.URL, { useNewUrlParser: true});
 mongoose.set('strictQuery', true);
 
 const userSchema = new mongoose.Schema({
